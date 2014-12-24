@@ -24,6 +24,22 @@ namespace HRSuite.DAL
 
             employeesInfo.ForEach(ei => context.EmployeeInfo.Add(ei));
             context.SaveChanges();
+
+            //This seems backwards, which is why I'm questioning my approach overall to how we're creating these things
+            var employees = new List<Employee>
+            {
+                new Employee{EmployeeInfoID=1},
+                new Employee{EmployeeInfoID=2},
+                new Employee{EmployeeInfoID=3},
+                new Employee{EmployeeInfoID=4},
+                new Employee{EmployeeInfoID=5},
+                new Employee{EmployeeInfoID=6},
+                new Employee{EmployeeInfoID=7},
+                new Employee{EmployeeInfoID=8}
+            };
+
+            employees.ForEach(e => context.Employees.Add(e));
+            context.SaveChanges();
         }
     }
 }
