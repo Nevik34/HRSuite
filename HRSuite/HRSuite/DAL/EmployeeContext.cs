@@ -19,6 +19,13 @@ namespace HRSuite.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<Employee>()
+                .HasMany(r => r.Roles).WithMany(e => e.Employees)
+                .Map(t => t.MapLeftKey("EmployeeID")
+                    .MapRightKey("RoleID")
+                    .ToTable("EmployeeRole"));
+
         }
     }
 }

@@ -48,7 +48,7 @@ namespace HRSuite.Controllers
             if (ModelState.IsValid)
             {
                 db.EmployeeInfo.Add(employeeInfo);
-                var employee = new Employee { EmployeeInfoID = employeeInfo.EmployeeInfoID };
+                var employee = new Employee { EmployeeID = employeeInfo.EmployeeInfoId };
                 db.Employees.Add(employee);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

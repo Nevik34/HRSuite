@@ -8,7 +8,7 @@ namespace HRSuite.Models
     public class Employee
     {
         public int EmployeeID { get; set; }
-        public int EmployeeInfoID { get; set; }
-        public int EmployeeRoleID { get; set; }
+        public virtual EmployeeInfo EmployeeInfo { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }
