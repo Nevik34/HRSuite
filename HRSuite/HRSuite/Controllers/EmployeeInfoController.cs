@@ -49,7 +49,7 @@ namespace HRSuite.Controllers
             {
                 db.EmployeeInfo.Add(employeeInfo);
                 await db.SaveChangesAsync();
-                var employee = new Employee { EmployeeInfoID = employeeInfo.EmployeeInfoID };
+                var employee = new Employee { EmployeeID = employeeInfo.EmployeeInfoId };
                 db.Employees.Add(employee);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
