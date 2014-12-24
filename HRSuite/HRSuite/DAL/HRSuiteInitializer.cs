@@ -10,7 +10,7 @@ namespace HRSuite.DAL
     {
         protected override void Seed(EmployeeContext context)
         {
-            var EmployeesInfo = new List<EmployeeInfo>
+            var employeesInfo = new List<EmployeeInfo>
             {
             new EmployeeInfo{FirstName="Carson",LastName="Alexander",Dob=DateTime.Parse("2005-09-01"), Address = "", Gender = "M", MiddleName = "", PhoneNumber = "888-800-8135", SSN = "123-45-6789"},
             new EmployeeInfo{FirstName="Meredith",LastName="Alonso",Dob=DateTime.Parse("2002-09-01"), Address = "", Gender = "M", MiddleName = "", PhoneNumber = "888-800-8135", SSN = "123-45-6789"},
@@ -22,7 +22,7 @@ namespace HRSuite.DAL
             new EmployeeInfo{FirstName="Nino",LastName="Olivetto",Dob=DateTime.Parse("2005-09-01"), Address = "", Gender = "M", MiddleName = "", PhoneNumber = "888-800-8135", SSN = "123-45-6789"}
             };
 
-            EmployeesInfo.ForEach(ei => context.EmployeeInfo.Add(ei));
+            employeesInfo.ForEach(ei => context.EmployeeInfo.Add(ei));
             context.SaveChanges();
         }
     }
