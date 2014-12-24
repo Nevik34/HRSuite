@@ -7,7 +7,8 @@ namespace HRSuite.DAL
     public class EmployeeContext : DbContext
     {
 
-        public EmployeeContext() : base("EmployeeContext")
+        public EmployeeContext()
+            : base("EmployeeContext")
         {
         }
 
