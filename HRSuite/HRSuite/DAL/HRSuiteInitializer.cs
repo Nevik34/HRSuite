@@ -28,14 +28,14 @@ namespace HRSuite.DAL
             //This seems backwards, which is why I'm questioning my approach overall to how we're creating these things
             var employees = new List<Employee>
             {
-                new Employee{EmployeeID= 1},
-                new Employee{EmployeeID=2},
-                new Employee{EmployeeID=3},
-                new Employee{EmployeeID=4},
-                new Employee{EmployeeID=5},
-                new Employee{EmployeeID=6},
-                new Employee{EmployeeID=7},
-                new Employee{EmployeeID=8}
+                new Employee{EmployeeInfoID=1},
+                new Employee{EmployeeInfoID=2},
+                new Employee{EmployeeInfoID=3},
+                new Employee{EmployeeInfoID=4},
+                new Employee{EmployeeInfoID=5},
+                new Employee{EmployeeInfoID=6},
+                new Employee{EmployeeInfoID=7},
+                new Employee{EmployeeInfoID=8}
             };
 
             employees.ForEach(e => context.Employees.Add(e));
