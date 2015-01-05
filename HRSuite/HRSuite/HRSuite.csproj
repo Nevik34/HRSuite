@@ -162,10 +162,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EmployeeInfoController.cs" />
+    <Compile Include="Controllers\EmployeeInfosController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="DAL\EmployeeContext.cs" />
     <Compile Include="DAL\HRSuiteInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,7 +213,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -251,11 +254,16 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\EmployeeInfo\Create.cshtml" />
-    <Content Include="Views\EmployeeInfo\Delete.cshtml" />
-    <Content Include="Views\EmployeeInfo\Details.cshtml" />
-    <Content Include="Views\EmployeeInfo\Edit.cshtml" />
-    <Content Include="Views\EmployeeInfo\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\EmployeeInfos\Create.cshtml" />
+    <Content Include="Views\EmployeeInfos\Delete.cshtml" />
+    <Content Include="Views\EmployeeInfos\Details.cshtml" />
+    <Content Include="Views\EmployeeInfos\Edit.cshtml" />
+    <Content Include="Views\EmployeeInfos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,6 +7,11 @@ using System.Web;
 
 namespace HRSuite.Models
 {
+    public enum Gender
+    {
+        M, F
+    }
+    
     public class EmployeeInfo
     {
         public int EmployeeInfoId { get; set; }
@@ -16,11 +21,16 @@ namespace HRSuite.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Dob { get; set; }
-        public string Gender { get; set; }
+        public Gender? Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string SSN { get; set; }
-        [ForeignKey("EmployeeInfoId")]
-        public virtual Employee Employee { get; set; }
+
+        public virtual ICollection<Role> Roles { get; set; }
+
+        public EmployeeInfo()
+        {
+            Roles = new HashSet<Role>();
+        }
     }
 }

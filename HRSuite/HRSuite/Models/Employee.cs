@@ -10,5 +10,10 @@ namespace HRSuite.Models
         public int EmployeeID { get; set; }
         public virtual EmployeeInfo EmployeeInfo { get; set; }
         public virtual ICollection<Role> Roles { get; set; }
+
+        public Employee()
+        {
+            Roles = new HashSet<Role>();
+        }
     }
 }
