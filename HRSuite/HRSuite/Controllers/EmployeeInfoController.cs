@@ -47,12 +47,27 @@ namespace HRSuite.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Create an employee
+                var emp = new Employee();
+                db.Employees.Add(emp);
+                await db.SaveChangesAsync();
+                //Associate the employee's info
+                employeeInfo.EmployeeID = emp.EmployeeID;
                 db.EmployeeInfo.Add(employeeInfo);
                 await db.SaveChangesAsync();
-                var employee = new Employee { EmployeeInfoID = employeeInfo.EmployeeInfoID };
-                db.Employees.Add(employee);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                emp.EmployeeInfoID = employeeInfo.EmployeeInfoID;
+                using (var dbCtx = new EmployeeContext())
+                {
+                    dbCtx.Entry(emp).State = System.Data.Entity.EntityState.Modified;
+                    await dbCtx.SaveChangesAsync();
+                }
+                //Redirect to the role creation?
+                return RedirectToAction("Create", "Roles", new { EmployeeID = emp.EmployeeID });
+
+                //Previously, I created the info and then the employee. Tsk tsk. That could cause issues.
+                //var employee = new Employee { EmployeeInfoID = employeeInfo.EmployeeInfoID };
+                //db.Employees.Add(employee);
+                //await db.SaveChangesAsync();
             }
 
             return View(employeeInfo);

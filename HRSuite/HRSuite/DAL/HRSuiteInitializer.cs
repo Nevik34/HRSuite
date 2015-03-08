@@ -25,7 +25,6 @@ namespace HRSuite.DAL
             employeesInfo.ForEach(ei => context.EmployeeInfo.Add(ei));
             context.SaveChanges();
 
-            //This seems backwards, which is why I'm questioning my approach overall to how we're creating these things
             var employees = new List<Employee>
             {
                 new Employee{EmployeeInfoID=1},

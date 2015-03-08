@@ -163,6 +163,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="DAL\EmployeeContext.cs" />
     <Compile Include="DAL\HRSuiteInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -243,6 +244,11 @@
     <Content Include="Views\EmployeeInfo\Details.cshtml" />
     <Content Include="Views\EmployeeInfo\Edit.cshtml" />
     <Content Include="Views\EmployeeInfo\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
